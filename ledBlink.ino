@@ -1,9 +1,21 @@
+int ledPin = 29;
+int ledPin2 = 30;
+int switchPin = 31;
+
 void setup() {
-  // put your setup code here, to run once:
+  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(switchPin, INPUT);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  if (digitalRead(switchPin) == HIGH) {
+    digitalWrite(ledPin, HIGH);
+    digitalWrite(ledPin2, HIGH);
+    delay (500);
+    digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin2, LOW);
+    delay(500);
+  }
 }
